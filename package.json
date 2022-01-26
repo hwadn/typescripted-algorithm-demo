@@ -1,0 +1,9 @@
+{
+  "name": "typescripted-algorithm-demo",
+  "version": "1.0.0",
+  "description": "Algorithm demos writen by typescript",
+  "main": "demos/index.ts",
+  "repository": "git@github.com:IamHuadong/typescripted-algorithm-demo.git",
+  "author": "IamHuadong <1761339618@qq.com>",
+  "license": "MIT"
+}
