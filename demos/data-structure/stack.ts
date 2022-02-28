@@ -40,8 +40,8 @@ console.log('stack:', stack)
 console.log('stack isEmpty:', stack.isEmpty())
 
 stack.push('dd')
-const top = stack.peek()
-console.log('top:', top)
+const topItem = stack.peek()
+console.log('topItem:', topItem)
 
 stack.clear()
 console.log('stack:', stack, stack.size())
