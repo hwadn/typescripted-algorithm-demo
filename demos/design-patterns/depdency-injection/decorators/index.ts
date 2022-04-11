@@ -1,2 +1,3 @@
 export * from './Module.decorator'
-export * from './Get.decorator'
+export * from './Methods.decorator'
+export * from './Controller.decorator'
