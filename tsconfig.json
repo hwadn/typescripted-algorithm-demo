@@ -1,10 +1,17 @@
 {
   "extends": "@tsconfig/recommended/tsconfig.json",
+  "compilerOptions": {
+    "target": "es5",
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata":true,
+  },
   "ts-node": {
     "compilerOptions": {
       "target": "es5",
       "experimentalDecorators": true,
-      "allowSyntheticDefaultImports": true
+      "allowSyntheticDefaultImports": true,
+      "emitDecoratorMetadata":true,
     }
   }
 }
