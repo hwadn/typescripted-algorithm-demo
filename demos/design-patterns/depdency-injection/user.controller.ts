@@ -6,8 +6,9 @@ import { Get, Controller } from './decorators'
 export class UserController {
 	constructor (private readonly userService: UserService){}
 
-	@Get('/list')
+	@Get('list')
 	listUsers () {
-		return this.userService.listUsers()
+    return { data: [{ name: 'dd' }] }
+		// return this.userService.listAllUsers()
 	}
 }
