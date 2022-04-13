@@ -1,7 +1,7 @@
 import { IListUserResponse } from './dto/user.dto'
 
 export class UserService {
-	public async listUsers (): Promise<IListUserResponse> {
+	public async listAllUsers (): Promise<IListUserResponse> {
 		return {
 			total: 2,
 			items: [

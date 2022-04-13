@@ -8,9 +8,9 @@ export const MethodDecorator = (path: string): ClassDecorator => {
 }
 
 const createMethodDecorator = (method: METHODS) => (path: string): MethodDecorator => {
-	return (target, propertyKey) => {
-    Reflect.defineMetadata(PATH_METADATA, path, target, propertyKey)
-    Reflect.defineMetadata(METHOD_METADATA, method, target, propertyKey)
+	return (target, propertyKey, descriptor: PropertyDescriptor) => {
+    Reflect.defineMetadata(PATH_METADATA, path, descriptor.value)
+    Reflect.defineMetadata(METHOD_METADATA, method, descriptor.value)
 	}
 }
 
