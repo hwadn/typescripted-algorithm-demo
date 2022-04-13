@@ -4,8 +4,11 @@ import { UserController } from './user.controller'
 import { generateRoutes } from './helpers/generateRoutes'
 import { UserService } from './user.service'
 
-// TODO dependence injection
-const user = new UserController(new UserService())
+import { load, Container } from './container'
+
+const container = new Container()
+load(container)
+const user = container.get<UserController>(UserController.name)
 
 const routes = generateRoutes(user)
 
