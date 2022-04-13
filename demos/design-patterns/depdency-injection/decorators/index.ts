@@ -1,3 +1,4 @@
-export * from './Module.decorator'
-export * from './Methods.decorator'
-export * from './Controller.decorator'
+export * from './methods.decorator'
+export * from './controller.decorator'
+export * from './provider.decorator'
+export * from './inject.decorator'

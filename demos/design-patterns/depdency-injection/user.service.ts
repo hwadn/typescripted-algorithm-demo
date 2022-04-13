@@ -1,5 +1,7 @@
-import { IListUserResponse } from './dto/user.dto'
+import { IListUserResponse } from './dto/user.dto' 
+import { Provider } from './decorators'
 
+@Provider()
 export class UserService {
 	public async listAllUsers (): Promise<IListUserResponse> {
 		return {

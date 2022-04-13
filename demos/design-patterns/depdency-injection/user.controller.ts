@@ -1,14 +1,15 @@
 import { UserService } from './user.service'
 import { Get, Controller } from './decorators'
-
+import { Inject } from './decorators'
+import { Provider } from './decorators'
 
 @Controller('user')
+@Provider()
 export class UserController {
-	constructor (private readonly userService: UserService){}
+	constructor (@Inject() private readonly userService: UserService){}
 
 	@Get('list')
 	listUsers () {
-    return { data: [{ name: 'dd' }] }
-		// return this.userService.listAllUsers()
+		return this.userService.listAllUsers()
 	}
 }
