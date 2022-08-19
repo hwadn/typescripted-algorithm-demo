@@ -5,6 +5,7 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "emitDecoratorMetadata":true,
+	"lib": ["ESNext"]
   },
   "ts-node": {
     "compilerOptions": {
