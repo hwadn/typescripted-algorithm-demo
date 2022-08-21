@@ -5,7 +5,11 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "emitDecoratorMetadata":true,
-	"lib": ["ESNext"]
+	"lib": ["ESNext"],
+	"baseUrl": ".",
+	"paths": {
+		"@/*": ["demos/*"]
+	},
   },
   "ts-node": {
     "compilerOptions": {

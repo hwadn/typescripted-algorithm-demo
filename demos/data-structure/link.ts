@@ -2,7 +2,7 @@ class Node<TValue = unknown> {
 	constructor (public value?: TValue, public next?: Node<TValue>) {}
 }
 
-class LinkedList<TValue = unknown> {
+export class LinkedList<TValue = unknown> {
 	public head = new Node<TValue>()
 	public count = 0
 
@@ -45,12 +45,22 @@ class LinkedList<TValue = unknown> {
 	}
 
 	// TODO
-}
+	public removeByIndex(index: number) {
+		let count = 0
+		let previousNode = this.head
+		let currentNode = previousNode.next
+		while(currentNode) {
+			count++
+			if (count === index) {
+				const nextNode = currentNode.next
+				previousNode.next = nextNode
+			}
+			previousNode = currentNode
+			currentNode = currentNode.next
+		}
+	}
 
-// tests
-const emptyLink = new LinkedList()
-console.log('emptyLink:', emptyLink.join(), 'count:', emptyLink.count)
-const numberLink = new LinkedList<number>([1, 2, 3])
-console.log('numberLink:', numberLink.join(), 'count:', numberLink.count)
-numberLink.push(5)
-console.log('numberLink:', numberLink.join(), 'count:', numberLink.count)
+	// public removeByValue(value: TValue) {
+
+	// }
+}
