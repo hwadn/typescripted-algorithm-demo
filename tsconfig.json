@@ -8,7 +8,7 @@
 	"lib": ["ESNext"],
 	"baseUrl": ".",
 	"paths": {
-		"@/*": ["demos/*"]
+		"@/*": ["src/*"]
 	},
   },
   "ts-node": {

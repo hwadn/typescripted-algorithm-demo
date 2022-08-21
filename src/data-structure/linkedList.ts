@@ -24,7 +24,7 @@ export class LinkedList<TValue = unknown> {
 	}
 
 	public join(divider = '->') {
-		const nodeValues = []
+		const nodeValues: (TValue | undefined)[] = []
 		let currentNode = this.head.next
 		while(currentNode) {
 			const currentValue = currentNode.value
@@ -44,23 +44,63 @@ export class LinkedList<TValue = unknown> {
 		this.count++
 	}
 
-	// TODO
 	public removeByIndex(index: number) {
 		let count = 0
 		let previousNode = this.head
 		let currentNode = previousNode.next
 		while(currentNode) {
-			count++
 			if (count === index) {
 				const nextNode = currentNode.next
 				previousNode.next = nextNode
+				this.count--
+			}
+			previousNode = currentNode
+			currentNode = currentNode.next
+			count++
+		}
+	}
+
+	public removeByValue(value: TValue) {
+		let previousNode = this.head
+		let currentNode = previousNode.next
+		while(currentNode) {
+			if (currentNode.value === value) {
+				const nextNode = currentNode.next
+				previousNode.next = nextNode
+				this.count--
 			}
 			previousNode = currentNode
 			currentNode = currentNode.next
 		}
 	}
 
-	// public removeByValue(value: TValue) {
+	public findByIndex(index: number): Node<TValue> | void {
+		let count = 0
+		let currentNode = this.head.next
+		while (currentNode) {
+			if (index === count) return currentNode
+			currentNode = currentNode.next
+			count++
+		}
+	}
 
-	// }
+	public insert(index: number, value: TValue) {
+		const foundNode = this.findByIndex(index)
+		if (foundNode) {
+			const nextNode = foundNode.next
+			const insertedNode = new Node(value)
+			insertedNode.next = nextNode
+			foundNode.next = insertedNode
+		}
+	}
+
+	public indexOf(value: TValue): number | void {
+		let count = 0
+		let currentNode = this.head.next
+		while (currentNode) {
+			if (currentNode.value === value) return count
+			currentNode = currentNode.next
+			count ++
+		}
+	}
 }
