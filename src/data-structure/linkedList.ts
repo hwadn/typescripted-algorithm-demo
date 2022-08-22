@@ -1,4 +1,4 @@
-class Node<TValue = unknown> {
+export class Node<TValue = unknown> {
 	constructor (public value?: TValue, public next?: Node<TValue>) {}
 }
 
