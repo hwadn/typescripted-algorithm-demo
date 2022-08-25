@@ -7,7 +7,8 @@
   "author": "IamHuadong <1761339618@qq.com>",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+	"lint": "eslint . --fix"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.1",
