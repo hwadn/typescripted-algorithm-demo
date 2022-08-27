@@ -5,7 +5,7 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "emitDecoratorMetadata":true,
-	"lib": ["ESNext"],
+	"lib": ["ES6"],
 	"baseUrl": ".",
 	"paths": {
 		"@/*": ["src/*"]
