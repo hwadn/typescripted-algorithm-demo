@@ -111,8 +111,43 @@ export class BinarySearchTree<TKey = unknown> {
 		return this.searchNode(currentNode, key)
 	}
 
-	// TODO
-	public remove(key: TKey) {}
+	public remove(key: TKey) {
+		this.root  = this.removeNode(this.root, key)
+	}
+
+	public removeNode(node: Node<TKey> | null, key: TKey): Node<TKey> | null {
+		if (!node) return null
+		if (key < node.key) {
+			node.left = this.removeNode(node.left, key)
+			return node
+		} else if (key > node.key) {
+			node.right = this.removeNode(node.right, key)
+			return node
+		} else {
+			if (!node.left && !node.right) {
+				return null
+			} else if (!node.left) {
+				return node.right 
+			} else if (!node.right) {
+				return node.left
+			} else {
+				const minRightNode = this.minNode(node.right)
+				node.key = minRightNode.key
+				node.right = this.removeNode(node.right, node.key)
+				console.log('node.right:', node.right)
+				return node
+			}
+		}
+		return null
+	}
+
+	private minNode(node: Node<TKey>): Node<TKey> {
+		let currentNode = node
+		while (currentNode.left) {
+			currentNode = currentNode.left
+		}
+		return currentNode
+	}
 }
 
 const bst = new BinarySearchTree()
@@ -138,3 +173,5 @@ console.log(bst.postOrderTraverse().join(','))
 console.log('min:', bst.min())
 console.log('max:', bst.max())
 console.log('search 13:', bst.search(13))
+bst.remove(15)
+console.log(bst.inOrderTraverse().join(','))
