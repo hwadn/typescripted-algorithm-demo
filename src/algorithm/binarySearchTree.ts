@@ -1,4 +1,4 @@
-class Node<TKey = unknown> {
+export class Node<TKey = unknown> {
 	public key: TKey
 	public left: Node<TKey> | null = null
 	public right: Node<TKey> | null = null
