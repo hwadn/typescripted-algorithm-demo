@@ -17,6 +17,7 @@ const bubbleSort = (array: number[], ascend = true) => {
 	}
 }
 
+// 单个元素交换
 const selectSort = (array: number[], ascend = true) => {
 	if (!array || array.length <= 1) return
 	const orderfactor = ascend ? 1 : -1
@@ -34,6 +35,21 @@ const selectSort = (array: number[], ascend = true) => {
 	}
 }
 
+// 扑克牌排序，局部位移
+const insertionSort = (array: number[], ascend = true) => {
+	if (!array || array.length <= 1) return
+	const orderfactor = ascend ? 1 : -1
+	for (let i = 1; i < array.length; i++) {
+		const temp = array[i]
+		let j = i
+		while(j > 0 && (temp - array[j - 1]) * orderfactor < 0) {
+			array[j] = array[j - 1]
+			j --
+		}
+		array[j] = temp
+	}
+}
+
 const testArray = [4,1,4,1,44,146,65,23,6,9,33]
-selectSort(testArray)
+insertionSort(testArray)
 console.log('testArray:', testArray.join(','))
