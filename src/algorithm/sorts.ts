@@ -50,6 +50,31 @@ const insertionSort = (array: number[], ascend = true) => {
 	}
 }
 
+const mergeSort = (array: number[], ascend = true): number[] => {
+	if (!array || array.length <= 1) return array
+	const orderfactor = ascend ? 1 : -1
+	const midIndex = Math.floor(array.length / 2)
+	const left = mergeSort(array.slice(0, midIndex), ascend)
+	const right = mergeSort(array.slice(midIndex, array.length), ascend)
+	return merge(left, right, orderfactor)
+}
+
+const merge = (left: number[], right: number[], orderfactor: number): number[] => {
+	let i = 0
+	let j = 0
+	const result = []
+	while (i < left.length && j < right.length) {
+		if ((left[i] - right[j]) * orderfactor < 0) {
+			result.push(left[i])
+			i++
+		} else {
+			result.push(right[j])
+			j++
+		}
+	}
+	return result.concat(i < left.length ? left.slice(i) : right.slice(j))
+}
+
 const testArray = [4,1,4,1,44,146,65,23,6,9,33]
-insertionSort(testArray)
-console.log('testArray:', testArray.join(','))
+const sortedArray = mergeSort(testArray, false)
+console.log('testArray:', sortedArray.join(','))
