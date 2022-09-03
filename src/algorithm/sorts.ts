@@ -75,7 +75,7 @@ const merge = (left: number[], right: number[], orderfactor: number): number[] =
 	return result.concat(i < left.length ? left.slice(i) : right.slice(j))
 }
 
-const quickSort = (array: number[], ascend = true) => {
+export const quickSort = (array: number[], ascend = true) => {
 	if (!array || array.length <= 1) return array
 	quick(array, 0, array.length - 1, ascend)
 }
