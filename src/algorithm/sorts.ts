@@ -75,6 +75,44 @@ const merge = (left: number[], right: number[], orderfactor: number): number[] =
 	return result.concat(i < left.length ? left.slice(i) : right.slice(j))
 }
 
+const quickSort = (array: number[], ascend = true) => {
+	if (!array || array.length <= 1) return array
+	quick(array, 0, array.length - 1, ascend)
+}
+
+const quick = (array: number[], start: number, end: number, ascend = true) => {
+	if (start >= end) return
+	const orderfactor = ascend ? 1 : -1
+	const midIndex = Math.floor((start + end) / 2)
+	const midValue = array[midIndex]
+
+	
+	let i = start
+	let j = end
+
+	// 考虑已经排好序的情况
+	while (i <= j) {
+		while ((array[i] - midValue) * orderfactor < 0) i++
+		while ((array[j] - midValue) * orderfactor > 0) j--
+
+		if (i <= j) {
+			swap(array, i, j)
+			i++
+			j--
+		}
+	}
+
+	if (start < i -1) {
+		quick(array, start, i - 1, ascend)
+	}
+
+	if (i < end) {
+		quick(array, i, end, ascend)
+	}
+}
+
 const testArray = [4,1,4,1,44,146,65,23,6,9,33]
-const sortedArray = mergeSort(testArray, false)
-console.log('testArray:', sortedArray.join(','))
+
+quickSort(testArray, false)
+
+console.log('testArray:', testArray.join(','))
