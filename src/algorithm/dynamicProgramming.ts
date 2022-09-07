@@ -85,3 +85,26 @@ const goodList = [
 const maxGoodList = knapsack(8, goodList)
 const maxVal = knapsack2(8, goodList)
 console.log('maxGoodList:', maxGoodList, maxVal)
+
+// max length children
+const lcs = (word1: string, word2: string): number => {
+	const maxtrix: number[][] = new Array(word1.length + 1)
+	maxtrix.fill(new Array(word2.length))
+
+	for (let i = 0; i <= word1.length; i++) {
+		for (let j = 0; j <= word2.length; j++) {
+			if (i === 0 || j === 0) {
+				maxtrix[i][j] = 0
+			} else if (word1[i - 1] === word2[j - 1]) {
+				maxtrix[i][j] = maxtrix[i - 1][j - 1] + 1
+			} else {
+				maxtrix[i][j] = Math.max(maxtrix[i - 1][j], maxtrix[i][j - 1])
+			}
+		}
+	}
+	return maxtrix[word1.length][word2.length]
+}
+
+const a = 'acbaed'
+const b = 'abcadf'
+console.log('lcs:', lcs(a, b))
