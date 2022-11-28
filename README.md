@@ -5,4 +5,15 @@
 
 [3. 无重复字符的最长子串](https://leetcode.cn/problems/longest-substring-without-repeating-characters/)
 
+[209. 长度最小的子数组](https://leetcode.cn/problems/minimum-size-subarray-sum/)
+
+[438. 找到字符串中所有字母异位词](https://leetcode.cn/problems/find-all-anagrams-in-a-string/) 【doing】
+
+[567. 字符串的排列](https://leetcode.cn/problems/permutation-in-string/) 【todo】
+
+[904. 水果成篮](https://leetcode.cn/problems/fruit-into-baskets/) 【todo】
+
+[713. 乘积小于 K 的子数组](https://leetcode.cn/problems/subarray-product-less-than-k/) 【todo】
+
+
 ## 动态规划
