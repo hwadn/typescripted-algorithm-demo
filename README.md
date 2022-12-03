@@ -11,7 +11,7 @@
 
 [567. 字符串的排列](https://leetcode.cn/problems/permutation-in-string/)
 
-[904. 水果成篮](https://leetcode.cn/problems/fruit-into-baskets/) 【todo】
+[904. 水果成篮](https://leetcode.cn/problems/fruit-into-baskets/) 
 
 [713. 乘积小于 K 的子数组](https://leetcode.cn/problems/subarray-product-less-than-k/) 【todo】
 
