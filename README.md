@@ -3,14 +3,15 @@
 ## 1.滑动窗口
 滑动窗口指的是这样一类问题的求解方法，在数组上通过双指针同向移动（保持固定或非固定的窗口长度）而解决的一类问题
 
-### 模板：
-- 固定窗口
+### 固定窗口
 
 窗口长度固定，左端点有序移动
 
 [438. 找到字符串中所有字母异位词](https://leetcode.cn/problems/find-all-anagrams-in-a-string/)
 
 [567. 字符串的排列](https://leetcode.cn/problems/permutation-in-string/)
+
+#### 模板：
 
 ``` ts
 for (let i = 1; i <= s2.length - s1.length; i++) {
@@ -24,7 +25,7 @@ for (let i = 1; i <= s2.length - s1.length; i++) {
 ```
 
 
-- 动态窗口
+### 动态窗口
 
 窗口长度变化，一个端点有序移动，另一个端点动态调整
 
@@ -37,6 +38,8 @@ for (let i = 1; i <= s2.length - s1.length; i++) {
 [904. 水果成篮](https://leetcode.cn/problems/fruit-into-baskets/) 
 
 [713. 乘积小于 K 的子数组](https://leetcode.cn/problems/subarray-product-less-than-k/)
+
+#### 模板：
 
 ``` ts
 let left = 0
@@ -52,7 +55,7 @@ for (let i = 0; i < s.length; i++) {
 }
 ```
 
-## 动态规划
+## 2.动态规划
 动态规划（英语：Dynamic programming，简称 DP）是一种在数学、管理科学、计算机科学、经济学和生物信息学中使用的，通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。
 
 动态规划常常适用于有重叠子问题和最优子结构性质的问题，并且记录所有子问题的结果，因此动态规划方法所耗时间往往远少于朴素解法。
@@ -61,19 +64,28 @@ for (let i = 0; i < s.length; i++) {
 
 使用动态规划解决的问题有个明显的特点，一旦一个子问题的求解得到结果，以后的计算过程就不会修改它，这样的特点叫做无后效性，求解问题的过程形成了一张有向无环图。动态规划只解决每个子问题一次，具有天然剪枝的功能，从而减少计算量。
 
-- 一维
+### 一维
 
 [53. 最大子序和](https://leetcode.cn/problems/maximum-subarray/)
 
 [70. 爬楼梯](https://leetcode.cn/problems/climbing-stairs/)
 
-- 二维
+#### 模板：
+``` ts
+TODO
+```
+### 二维
 
 [5. 最长回文子串](https://leetcode.cn/problems/longest-palindromic-substring/)
 
 [62. 不同路径](https://leetcode.cn/problems/unique-paths/)
 
 [118. 杨辉三角](https://leetcode.cn/problems/pascals-triangle/)
+
+#### 模板：
+``` ts
+TODO
+```
 
 <hr/>
 
