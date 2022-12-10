@@ -11,7 +11,7 @@
 
 [567. 字符串的排列](https://leetcode.cn/problems/permutation-in-string/)
 
-#### 模板：
+模板：
 
 ``` ts
 for (let i = 1; i <= s2.length - s1.length; i++) {
@@ -39,7 +39,7 @@ for (let i = 1; i <= s2.length - s1.length; i++) {
 
 [713. 乘积小于 K 的子数组](https://leetcode.cn/problems/subarray-product-less-than-k/)
 
-#### 模板：
+模板：
 
 ``` ts
 let left = 0
@@ -70,7 +70,7 @@ for (let i = 0; i < s.length; i++) {
 
 [70. 爬楼梯](https://leetcode.cn/problems/climbing-stairs/)
 
-#### 模板：
+模板：
 ``` ts
 TODO
 ```
@@ -82,7 +82,7 @@ TODO
 
 [118. 杨辉三角](https://leetcode.cn/problems/pascals-triangle/)
 
-#### 模板：
+模板：
 ``` ts
 TODO
 ```
