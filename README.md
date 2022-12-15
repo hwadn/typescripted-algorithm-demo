@@ -70,9 +70,28 @@ for (let i = 0; i < s.length; i++) {
 
 [70. 爬楼梯](https://leetcode.cn/problems/climbing-stairs/)
 
+
+[300. 最长上升子序列](https://leetcode.cn/problems/longest-increasing-subsequence/)
+
+[746. 使用最小花费爬楼梯](https://leetcode.cn/problems/min-cost-climbing-stairs/)
+
+
 模板：
 ``` ts
-TODO
+const dp: number[] = new Array(x)
+
+let res = 0
+
+for (let i = 0; i < x; j++) {
+	xxx
+	dp[i] = dp[i - 1]...
+
+	xxx
+	res += dp[i]
+}
+
+
+return res
 ```
 ### 二维
 
@@ -82,15 +101,30 @@ TODO
 
 [118. 杨辉三角](https://leetcode.cn/problems/pascals-triangle/)
 
+[1277. 统计全为1的正方形子矩阵](https://leetcode.cn/problems/count-square-submatrices-with-all-ones/)
+
 模板：
 ``` ts
-TODO
+const dp: number[][] = new Array(x)
+for (let i = 0; i < x; i++) {
+	dp[i] = new Array(y)
+}
+
+let res = 0
+
+for (let i = 0; i < x; i++) {
+	for (let j = 0; j < y; j++) {
+		xxx
+		dp[i][j] = dp[i - 1][j - 1]...
+
+		xxx
+		res += dp[i][j]
+	}
+}
+
+return res
 ```
 
 <hr/>
 
-[300. 最长上升子序列](https://leetcode.cn/problems/longest-increasing-subsequence/)【todo】
-
-[746. 使用最小花费爬楼梯](https://leetcode.cn/problems/min-cost-climbing-stairs/)【todo】
-
-[1277. 统计全为1的正方形子矩阵](https://leetcode.cn/problems/count-square-submatrices-with-all-ones/)【todo】
+[416. 分割等和子集](https://leetcode.cn/problems/partition-equal-subset-sum/) todo
