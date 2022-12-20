@@ -103,6 +103,8 @@ return res
 
 [1277. 统计全为1的正方形子矩阵](https://leetcode.cn/problems/count-square-submatrices-with-all-ones/)
 
+[416. 分割等和子集](https://leetcode.cn/problems/partition-equal-subset-sum/)
+
 模板：
 ``` ts
 const dp: number[][] = new Array(x)
@@ -124,7 +126,3 @@ for (let i = 0; i < x; i++) {
 
 return res
 ```
-
-<hr/>
-
-[416. 分割等和子集](https://leetcode.cn/problems/partition-equal-subset-sum/) todo
